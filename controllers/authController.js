@@ -68,7 +68,7 @@ exports.signupUser = catchAsync(async (req, res, next) => {
     generateJWT(user, res);
 });
 
-// @desc      Login user
+// @desc      LoginScreen user
 // @route     POST /api/v1/auth/login
 // @access    Public
 exports.loginUser = catchAsync(async (req, res, next) => {
@@ -137,7 +137,7 @@ exports.protectRoute = catchAsync(async (req, res, next) => {
     }
 
     if (!token) {
-        throw new AppError("Please Login to access", 401)
+        throw new AppError("Please LoginScreen to access", 401)
     }
 
     //Verify JWT
@@ -156,7 +156,7 @@ exports.protectRoute = catchAsync(async (req, res, next) => {
     )
 
     if (passwordChangedAt > payload.iat) {
-        throw new AppError(" You password was changed recently. Please Login again ")
+        throw new AppError(" You password was changed recently. Please LoginScreen again ")
     }
 
     //Authenticate User

@@ -3,6 +3,7 @@ const express = require("express");
 const authController = require("../controllers/authController");
 const userController = require("../controllers/userController");
 const followController = require("../controllers/followController");
+const UserollowController = require("../controllers/followController");
 
 const router = express.Router();
 
@@ -52,7 +53,7 @@ router.get("/:username/unfollow", followController.unfollowUser);
 // *? ALL FOLLOWERS OF A USER
 router.get("/:username/followers", followController.getAllFollowers);
 // *? ALL FOLLOWS OF A USER
-router.get("/:username/follows", fgetUserollowController.getAllFollows);
+router.get("/:username/follows", UserollowController.getAllFollows);
 
 // *? <---- ADMIN ONLY ROUTES ---->
 
